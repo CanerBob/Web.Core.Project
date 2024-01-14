@@ -1,0 +1,22 @@
+﻿@model WriterMessage
+@{
+    ViewData["Title"] = "RecieverMessageDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<form class="form-group">
+	<h1>Mesaj Detayları</h1>
+	<br />
+
+	@Html.HiddenFor(x => x.WriterMesssageId, new { @class = "form-control" })
+	<br />
+	@Html.Label("Alıcı Adı")
+	@Html.TextBoxFor(x => x.ReceiverName, new { @class = "form-control" })
+	<br />
+	@Html.Label("Alıcı Mail")
+	@Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+	<br />
+	@Html.Label("Mesaj")
+	@Html.TextAreaFor(x => x.MessageContent, 10, 3, new { @class = "form-control" })
+</form>
+

@@ -1,0 +1,21 @@
+﻿@model Sservice
+@{
+    ViewData["Title"] = "AddService";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Hizmet Ekleme Sayfası</h3>
+</div>
+<br />
+<br />
+@using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ServiceId)
+    <br />
+    @Html.Label("Proje Başlığı")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title)
+    <button class="btn btn-success" type="submit">Proje Ekle</button>
+}
+

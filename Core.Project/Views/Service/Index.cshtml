@@ -1,0 +1,49 @@
+﻿@model List<Sservice>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col">
+        <div class="card bg-default shadow">
+            <div class="card-header bg-transparent border-0">
+                <h3 class="text-white mb-0">Hizmetlerim</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center table-dark table-flush">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" class="sort" data-sort="budget">Hizmet Id</th>
+                            <th scope="col" class="sort" data-sort="name">Proje Adı</th>
+                            <th scope="col">Güncelle</th>
+                            <th scope="col">Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody class="list">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th>
+                                    @item.ServiceId
+                                </th>
+                                <th>
+                                    @item.Title
+                                </th>
+                                <td>
+                                    <a href="/Service/EditService/@item.ServiceId" class="btn btn-primary">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-warning" href="/Service/DeleteService/@item.ServiceId" id="DeleteBtn"
+                                       onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i> Sil</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="/Portfolio/AddService/" class="btn btn-primary">Hizmet Ekle</a>
+

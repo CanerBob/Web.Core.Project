@@ -1,0 +1,98 @@
+﻿@model PersonRegisterViewModel
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Skydash Admin</title>
+	<!-- plugins:css -->
+	<link rel="stylesheet" href="~/skydash/vendors/feather/feather.css">
+	<link rel="stylesheet" href="~/skydash/vendors/ti-icons/css/themify-icons.css">
+	<link rel="stylesheet" href="~/skydash/vendors/css/vendor.bundle.base.css">
+	<!-- endinject -->
+	<!-- Plugin css for this page -->
+	<!-- End plugin css for this page -->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="~/skydash/css/vertical-layout-light/style.css">
+	<!-- endinject -->
+	<link rel="shortcut icon" href="~/skydash/images/favicon.png" />
+</head>
+
+<body>
+	<div class="container-scroller">
+		<div class="container-fluid page-body-wrapper full-page-wrapper">
+			<div class="content-wrapper d-flex align-items-center auth px-0">
+				<div class="row w-100 mx-0">
+					<div class="col-lg-4 mx-auto">
+						<div class="auth-form-light text-left py-5 px-4 px-sm-5">
+							<div class="brand-logo">
+								<img src="~/skydash/images/logo.svg" alt="logo">
+							</div>
+							<h4>Bir Hesabın Yok Mu?</h4>
+							<h6 class="Kolay Bir Şekilde Sana Hesap Oluşturalım"></h6>
+
+							@using (Html.BeginForm(FormMethod.Post))
+							{
+								@Html.Label("Adınız :") 
+								@Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+								@Html.ValidationMessageFor(x => x.FirstName)
+								<br />
+								@Html.Label("Soyadınız :")
+								@Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+								@Html.ValidationMessageFor(x => x.LastName)
+								<br />
+								@Html.Label("Email :")
+								@Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+								@Html.ValidationMessageFor(x => x.Email)
+								<br />
+								@Html.Label("Resim Yolu :")
+								@Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+								@Html.ValidationMessageFor(x => x.ImageUrl)
+								<br />
+								@Html.Label("Kullanıcı Adı :")
+								@Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+								@Html.ValidationMessageFor(x => x.UserName)
+								<br />
+								@Html.Label("Şifre :")
+								@Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+								@Html.ValidationMessageFor(x => x.Password)
+								<br />
+								@Html.Label("Şifre Tekrar :")
+								@Html.TextBoxFor(x => x.ConfirmPassword, new { @class = "form-control" })
+								@Html.ValidationMessageFor(x => x.ConfirmPassword)
+								<br />
+								<div class="text-danger" asp-validation-summary="ModelOnly">
+
+								</div>
+								<button class="btn btn-success" type="submit" href="/Writer/Login/Index">Kayıt Ol</button>	
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- content-wrapper ends -->
+		</div>
+		<!-- page-body-wrapper ends -->
+	</div>
+	<!-- container-scroller -->
+	<!-- plugins:js -->
+	<script src="~/skydash/vendors/js/vendor.bundle.base.js"></script>
+	<!-- endinject -->
+	<!-- Plugin js for this page -->
+	<!-- End plugin js for this page -->
+	<!-- inject:js -->
+	<script src="~/skydash/js/off-canvas.js"></script>
+	<script src="~/skydash/js/hoverable-collapse.js"></script>
+	<script src="~/skydash/js/template.js"></script>
+	<script src="~/skydash/js/settings.js"></script>
+	<script src="~/skydash/js/todolist.js"></script>
+	<!-- endinject -->
+</body>
+
+</html>
